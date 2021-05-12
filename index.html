@@ -37,12 +37,26 @@
                     </div>
                 );
             }
+        
+        // text functional component
+        function TextDisplay() {
+                const [text, setText] = React.useState('text here');
+                const updateText = (event) => {
+                    setText(event.target.value)
+                }
+                return (
+                    <div>
+                        <h1>{text}</h1>
+                        <input type="text" onChange={updateText} />
+                    </div>);
+            }
 
         // using react to show output to user
         ReactDOM.render(
             <div>
                 <Hello />
                 <CounterWithHooks />
+                <TextDisplay />
             </div>,
             document.getElementById('root')
         );
