@@ -27,36 +27,34 @@
 
         // counting functional component
         function CounterWithHooks(props) {
-                const [count, setCount] = React.useState(0);
+            const [count, setCount] = React.useState(0);
 
-                return (
-                    <div>
-                        <h2>This is a counter using hooks</h2>
-                        <h1>Current State: {count}</h1>
-                        <button onClick={() => setCount(count + 1)}>Click to Increment Integer State</button>
-                    </div>
-                );
-            }
+            return (
+                <div>
+                    <h2>This is a counter using hooks</h2>
+                    <h1>Current State: {count}</h1>
+                    <button onClick={() => setCount(count + 1)}>Click to Increment Integer State</button>
+                </div>
+            );
+        }
         
         // text functional component
         function TextDisplay() {
-                const [text, setText] = React.useState('text here');
-                const updateText = (event) => {
-                    setText(event.target.value)
-                }
-                return (
-                    <div>
-                        <h1>{text}</h1>
-                        <input type="text" onChange={updateText} />
-                    </div>);
+            const [text, setText] = React.useState('text here');
+            const updateText = (event) => {
+                setText(event.target.value)
             }
+            return (
+                <div>
+                    <h1>{text}</h1>
+                    <input type="text" onChange={updateText} />
+                </div>);
+        }
 
         // using react to show output to user
         ReactDOM.render(
             <div>
                 <Hello />
-                <CounterWithHooks />
-                <TextDisplay />
             </div>,
             document.getElementById('root')
         );
